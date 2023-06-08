@@ -6,14 +6,14 @@ import jakarta.persistence.Id;
 @Entity
 public class UserE {
 	@Id
-	int phno ;
-	String imgUrl, name, dob, email, password;
+	int id;
+	String imgUrl, name, dob, email, password, phno;
 	public UserE() {
 		super();
 	}
-	public UserE(String imgUrl, String name, String dob, String email, int phno, String password) {
+	public UserE(int id, String imgUrl, String name, String dob, String email, String phno, String password) {
 		super();
-//		this.id = id;
+		this.id = id;
 		this.imgUrl = imgUrl;
 		this.name = name;
 		this.dob = dob;
@@ -21,12 +21,12 @@ public class UserE {
 		this.phno = phno;
 		this.password = password;
 	}
-//	public int getId() {
-//		return id;
-//	}
-//	public void setId(int id) {
-//		this.id = id;
-//	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getImgUrl() {
 		return imgUrl;
 	}
@@ -52,10 +52,10 @@ public class UserE {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getPhno() {
+	public String getPhno() {
 		return phno;
 	}
-	public void setPhno(int phno) {
+	public void setPhno(String phno) {
 		this.phno = phno;
 	}
 	public String getPassword() {

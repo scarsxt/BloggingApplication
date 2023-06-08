@@ -35,7 +35,8 @@ public class ActivityMain extends HttpServlet{
 		rd.forward(request, response);
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Register servlet");
 		try {
 			UserE ue = new UserE();
 			ue.email = request.getParameter("email");
@@ -43,13 +44,15 @@ public class ActivityMain extends HttpServlet{
 			ue.password = request.getParameter("password");
 			ue.dob = request.getParameter("dob");
 			ue.imgUrl = request.getParameter("name");
-			ue.phno = Integer.parseInt(request.getParameter("phno"));
+			ue.phno = request.getParameter("phno");
 			ur.save(ue);
-			
 			System.out.print("Successful");
 		}
 		catch(Exception e) {
 			System.out.println("Unsuccessful");
 		}
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+		rd.forward(request, response);	
+  
 	}
 }

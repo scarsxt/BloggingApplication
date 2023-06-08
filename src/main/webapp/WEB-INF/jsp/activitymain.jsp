@@ -7,15 +7,14 @@
 
 <style>
         body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
+            background-color: #fff;
+            font-family: 'Calibri Light';
         }
         .container {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         
         h2 {
@@ -38,28 +37,20 @@
             margin: 0px 0px;
         }
         .forms input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #0000FF;
             color: #fff;
             cursor: pointer;
-        }
-        .forms input[type="submit"]:hover {
-            background-color: #45a049;
         }
         .signin{
         	float: right;
         }
-        .signin:hover{
-        	cursor: pointer;
-        }
     </style>
 
 </head>
-<body>
- 
-    
+<body>   
     <div class="container">
         <h2>SignUp</h2>
-        <form action="${pageContext.request.contextPath }/login">
+        <form action="/register" method="POST">
         	<div class="forms">
                 <label>Name:</label>
                 <input type="text" id="uname" name="username" placeholder="Enter username">
